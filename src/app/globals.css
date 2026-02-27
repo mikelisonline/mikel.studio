@@ -114,6 +114,23 @@ body {
   }
 }
 
+/* Container padding — matches carousel-grid alignment */
+.container-main {
+  padding-inline: 16px;
+}
+
+@media (min-width: 769px) {
+  .container-main {
+    padding-inline: 32px;
+  }
+}
+
+@media (min-width: 1088px) {
+  .container-main {
+    padding-inline: 0;
+  }
+}
+
 /* --- Utility classes --- */
 
 /* Hide scrollbar */

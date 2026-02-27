@@ -6,6 +6,7 @@ export interface Project {
   year: number;
   href: string;
   bgColorDark: string;
+  logo: string;
 }
 
 export const projects: Project[] = [
@@ -17,6 +18,7 @@ export const projects: Project[] = [
     year: 2024,
     href: "https://traube.club",
     bgColorDark: "oklch(0.32 0.06 295)",
+    logo: "/projects/traube.svg",
   },
   {
     id: "padelko",
@@ -26,6 +28,7 @@ export const projects: Project[] = [
     year: 2024,
     href: "https://padelko.com",
     bgColorDark: "oklch(0.30 0.08 255.5)",
+    logo: "/projects/padelko.png",
   },
   {
     id: "uncommon",
@@ -35,5 +38,6 @@ export const projects: Project[] = [
     year: 2023,
     href: "https://www.uncommon.club",
     bgColorDark: "oklch(0.30 0.04 50)",
+    logo: "/projects/uncommon.svg",
   },
 ];

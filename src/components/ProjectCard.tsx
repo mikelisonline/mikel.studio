@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import type { Project } from "@/data/projects";
 import DrawerWrapper from "./DrawerWrapper";
@@ -36,9 +37,17 @@ export default function ProjectCard({ project }: { project: Project }) {
         </span>
       </div>
 
-      {/* Center thumbnail area */}
+      {/* Center logo area */}
       <div className="flex-1 flex items-center justify-center">
-        <div className="w-[60%] aspect-square rounded-xl bg-white/10" />
+        <div className="w-[50%] aspect-square relative">
+          <Image
+            src={project.logo}
+            alt={`${t(project.titleKey)} logo`}
+            fill
+            className="object-contain drop-shadow-lg"
+            sizes="150px"
+          />
+        </div>
       </div>
 
       {/* Bottom text */}
