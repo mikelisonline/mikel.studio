@@ -1,0 +1,24 @@
+{
+  "hero": {
+    "tagline": "Diseñador y desarrollador creando experiencias digitales con intención."
+  },
+  "sections": {
+    "projects": "Proyectos",
+    "music": "Música",
+    "photography": "Fotografía"
+  },
+  "projects": {
+    "project-one": {
+      "title": "Proyecto Uno",
+      "description": "Una aplicación web construida con tecnologías modernas y principios de diseño limpio."
+    },
+    "project-two": {
+      "title": "Proyecto Dos",
+      "description": "Una experiencia mobile-first centrada en la usabilidad y la narrativa visual."
+    },
+    "project-three": {
+      "title": "Proyecto Tres",
+      "description": "Una exploración creativa que fusiona código y diseño en algo nuevo."
+    }
+  }
+}

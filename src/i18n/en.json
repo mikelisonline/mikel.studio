@@ -1,0 +1,24 @@
+{
+  "hero": {
+    "tagline": "Designer & developer building thoughtful digital experiences."
+  },
+  "sections": {
+    "projects": "Projects",
+    "music": "Music",
+    "photography": "Photography"
+  },
+  "projects": {
+    "project-one": {
+      "title": "Project One",
+      "description": "A web application built with modern technologies and clean design principles."
+    },
+    "project-two": {
+      "title": "Project Two",
+      "description": "A mobile-first experience focused on usability and visual storytelling."
+    },
+    "project-three": {
+      "title": "Project Three",
+      "description": "A creative exploration blending code and design into something new."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "hero": {
+    "tagline": "Diseinatzailea eta garatzailea, esperientzia digital pentsatuak sortzen."
+  },
+  "sections": {
+    "projects": "Proiektuak",
+    "music": "Musika",
+    "photography": "Argazkilaritza"
+  },
+  "projects": {
+    "project-one": {
+      "title": "Lehenengo Proiektua",
+      "description": "Teknologia modernoekin eta diseinu garbi printzipioekin eraikitako web aplikazioa."
+    },
+    "project-two": {
+      "title": "Bigarren Proiektua",
+      "description": "Erabilgarritasunean eta ikus-narratiban zentratutako mobile-first esperientzia."
+    },
+    "project-three": {
+      "title": "Hirugarren Proiektua",
+      "description": "Kodea eta diseinua zerbait berrian nahasten dituen esplorazio sortzailea."
+    }
+  }
+}
