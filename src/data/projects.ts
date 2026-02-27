@@ -5,6 +5,8 @@ export interface Project {
   tags: ("development" | "design" | "both")[];
   year: number;
   href: string;
+  bgColor: string;
+  bgColorDark: string;
 }
 
 export const projects: Project[] = [
@@ -15,6 +17,8 @@ export const projects: Project[] = [
     tags: ["development"],
     year: 2025,
     href: "#",
+    bgColor: "oklch(0.7 0.13 255.5)",
+    bgColorDark: "oklch(0.35 0.08 255.5)",
   },
   {
     id: "project-two",
@@ -23,6 +27,8 @@ export const projects: Project[] = [
     tags: ["design"],
     year: 2024,
     href: "#",
+    bgColor: "oklch(0.81 0.11 295)",
+    bgColorDark: "oklch(0.35 0.06 295)",
   },
   {
     id: "project-three",
@@ -31,5 +37,7 @@ export const projects: Project[] = [
     tags: ["both"],
     year: 2024,
     href: "#",
+    bgColor: "oklch(0.75 0.16 155)",
+    bgColorDark: "oklch(0.35 0.1 155)",
   },
 ];

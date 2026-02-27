@@ -1,37 +1,151 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
+/* ========================================
+   Design system inspired by iamrob.in
+   ======================================== */
+
+/* --- Layout variables --- */
 :root {
-  --background: #09090b;
-  --foreground: #fafafa;
-  --muted: #a1a1aa;
-  --border: #27272a;
-  --accent: #e4e4e7;
+  --max-width: 1024px;
+  --gap: 16px;
+  --columns: 12;
 }
 
+/* --- Color palette (dark theme default) --- */
+:root {
+  /* Neutral warm palette */
+  --color-neutral-50: oklch(0.985 0.001 106.423);
+  --color-neutral-100: oklch(0.97 0.001 106.424);
+  --color-neutral-200: oklch(0.923 0.003 48.717);
+  --color-neutral-300: oklch(0.869 0.005 56.366);
+  --color-neutral-400: oklch(0.709 0.01 56.259);
+  --color-neutral-500: oklch(0.553 0.013 58.071);
+  --color-neutral-600: oklch(0.444 0.011 73.639);
+  --color-neutral-700: oklch(0.374 0.01 67.558);
+  --color-neutral-800: oklch(0.268 0.007 34.298);
+  --color-neutral-900: oklch(0.216 0.006 56.043);
+  --color-neutral-950: oklch(0.147 0.004 49.25);
+
+  /* Semantic tokens (dark) */
+  --background: var(--color-neutral-900);
+  --foreground: var(--color-neutral-100);
+  --surface: var(--color-neutral-800);
+  --surface-raised: var(--color-neutral-700);
+  --text-primary: var(--color-neutral-100);
+  --text-secondary: var(--color-neutral-400);
+  --text-muted: var(--color-neutral-500);
+  --border: var(--color-neutral-700);
+  --border-light: var(--color-neutral-800);
+  --border-dark: var(--color-neutral-600);
+  --hover-bg: var(--color-neutral-800);
+
+  /* Accent colors */
+  --color-yellow: oklch(0.85 0.18 85.65);
+  --color-blue: oklch(0.7 0.13 255.5);
+  --color-red: oklch(0.73 0.14 22.5);
+  --color-lilac: oklch(0.81 0.11 295);
+  --color-green: oklch(0.75 0.16 155);
+}
+
+/* --- Fluid typography --- */
 @theme inline {
+  /* Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-muted: var(--muted);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
   --color-border: var(--border);
-  --color-accent: var(--accent);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-border-light: var(--border-light);
+  --color-border-dark: var(--border-dark);
+  --color-hover-bg: var(--hover-bg);
+
+  /* Fonts */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-mono: var(--font-fira-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Fluid type scale */
+  --text-sm: clamp(0.83rem, 0.17vi + 0.79rem, 0.9rem);
+  --text-base: clamp(1rem, 0.32vi + 0.92rem, 1.13rem);
+  --text-md: clamp(1.2rem, 0.53vi + 1.07rem, 1.41rem);
+  --text-lg: clamp(1.44rem, 0.81vi + 1.24rem, 1.76rem);
+  --text-xl: clamp(1.73rem, 1.2vi + 1.43rem, 2.2rem);
+  --text-2xl: clamp(2.07rem, 1.73vi + 1.64rem, 2.75rem);
+  --text-3xl: clamp(2.49rem, 2.42vi + 1.88rem, 3.43rem);
+  --text-4xl: clamp(2.99rem, 3.35vi + 2.15rem, 4.29rem);
+
+  /* Spring easing */
+  --ease-spring: linear(0, 0.0068, 0.0272, 0.061, 0.108, 0.168, 0.24, 0.3238, 0.4174, 0.519, 0.6262, 0.7358, 0.8446, 0.9482, 1.0428, 1.0208, 1.0136, 1.008, 1.004, 1.0014, 1);
+  --ease-spring-playful: linear(0, 0.0156, 0.0618, 0.1353, 0.2318, 0.3469, 0.4748, 0.6088, 0.7416, 0.8658, 0.974, 1.0612, 1.1242, 1.1618, 1.1746, 1.1652, 1.138, 1.0976, 1.05, 1.001, 0.956, 0.9198, 0.896, 0.8868, 0.892, 0.9098, 0.937, 0.968, 0.9982, 1);
+  --ease-spring-subtle: linear(0, 0.0043, 0.0172, 0.0386, 0.068, 0.1052, 0.1496, 0.2006, 0.2572, 0.319, 0.385, 0.4542, 0.5254, 0.5974, 0.6694, 0.7398, 0.8072, 0.8706, 0.9284, 0.9794, 1.0125, 1.009, 1.006, 1.0038, 1.002, 1.0008, 1);
 }
 
+/* --- Base styles --- */
 body {
   background: var(--background);
   color: var(--foreground);
+  font-size: 18px;
+  overflow-x: hidden;
 }
 
 ::selection {
   background: rgba(255, 255, 255, 0.15);
 }
 
-/* Hide scrollbar for carousels */
+/* --- Utility classes --- */
+
+/* Hide scrollbar */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Hover lift effect */
+.hover-lift {
+  transition: all 0.6s var(--ease-spring-playful);
+}
+.hover-lift:hover {
+  scale: 1.02;
+  filter: drop-shadow(0px 14px 18px rgba(0, 0, 0, 0.1));
+}
+
+/* Carousel grid */
+.carousel-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc(
+    (var(--max-width) - (var(--columns) - 1) * var(--gap)) / var(--columns)
+  );
+  gap: var(--gap);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-inline: max(0px, calc((100vw - var(--max-width)) / 2));
+  scroll-padding-inline-start: max(0px, calc((100vw - var(--max-width)) / 2));
+}
+
+@media (max-width: 1088px) and (min-width: 769px) {
+  .carousel-grid {
+    padding-inline: 32px;
+    grid-auto-columns: calc(
+      (100vw - 64px - (var(--columns) - 1) * var(--gap)) / var(--columns)
+    );
+    scroll-padding-inline-start: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-grid {
+    padding-inline: 16px;
+    grid-auto-columns: calc(
+      (100vw - 32px - (var(--columns) - 1) * var(--gap)) / var(--columns)
+    );
+    scroll-padding-inline-start: 16px;
+  }
 }

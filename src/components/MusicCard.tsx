@@ -2,15 +2,21 @@ import type { Album } from "@/data/music";
 
 export default function MusicCard({ album }: { album: Album }) {
   return (
-    <div className="group flex-shrink-0 snap-start w-48 sm:w-56 transition-all duration-200 hover:-translate-y-1">
+    <div className="group hover-lift">
       {/* Album art placeholder */}
-      <div className="aspect-square rounded-lg bg-white/[0.03] border border-border mb-3 transition-colors group-hover:border-muted/50" />
+      <div className="aspect-square rounded-xl bg-surface overflow-hidden">
+        <div className="w-full h-full bg-surface-raised" />
+      </div>
 
       {/* Info */}
-      <p className="text-sm font-medium text-foreground truncate">
-        {album.artist}
-      </p>
-      <p className="text-sm text-muted truncate">{album.albumName}</p>
+      <div className="mt-3">
+        <p className="text-sm font-bold text-text-primary truncate">
+          {album.artist}
+        </p>
+        <p className="text-sm text-text-secondary truncate">
+          {album.albumName}
+        </p>
+      </div>
     </div>
   );
 }

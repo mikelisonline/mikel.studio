@@ -13,21 +13,21 @@ export default function LanguageSelector() {
   const { locale, setLocale } = useLanguage();
 
   return (
-    <div className="flex items-center gap-1 text-xs uppercase tracking-widest">
+    <div className="flex items-center gap-1.5 font-mono text-xs tracking-wider">
       {locales.map((l, i) => (
-        <span key={l.code} className="flex items-center gap-1">
+        <span key={l.code} className="flex items-center gap-1.5">
           <button
             onClick={() => setLocale(l.code)}
-            className={`transition-colors cursor-pointer ${
+            className={`transition-colors duration-200 cursor-pointer px-1 py-0.5 rounded ${
               locale === l.code
-                ? "text-foreground"
-                : "text-muted hover:text-foreground"
+                ? "text-text-primary bg-surface-raised"
+                : "text-text-muted hover:text-text-primary"
             }`}
           >
             {l.label}
           </button>
           {i < locales.length - 1 && (
-            <span className="text-border">/</span>
+            <span className="text-text-muted/30">/</span>
           )}
         </span>
       ))}
