@@ -8,17 +8,29 @@
     "photography": "Argazkilaritza"
   },
   "projects": {
-    "project-one": {
-      "title": "Lehenengo Proiektua",
-      "description": "Teknologia modernoekin eta diseinu garbi printzipioekin eraikitako web aplikazioa."
+    "traube": {
+      "title": "Traube",
+      "description": "Ekitaldiak aurkitzeko eta antolatzeko plataforma soziala. Sare sozialetarako alternatiba komunitarioa eta pribatua — algoritmorik gabe, iragarkirik gabe."
     },
-    "project-two": {
-      "title": "Bigarren Proiektua",
-      "description": "Erabilgarritasunean eta ikus-narratiban zentratutako mobile-first esperientzia."
+    "padelko": {
+      "title": "Padelko",
+      "description": "Webgunea eta marka identitatea padel zentro premium batentzat, barruko pista panoramikoekin, akademiarekin eta fitness zerbitzuekin."
     },
-    "project-three": {
-      "title": "Hirugarren Proiektua",
-      "description": "Kodea eta diseinua zerbait berrian nahasten dituen esplorazio sortzailea."
+    "uncommon": {
+      "title": "Uncommon Club",
+      "description": "Kide premium komunitateko plataforma, onura esklusiboak, networkinga eta sarbide pribilegiatu batekin."
     }
+  },
+  "footer": {
+    "copyright": "Mikel Garcia",
+    "source": "Iturburu kodea"
+  },
+  "drawer": {
+    "visitSite": "Bisitatu webgunea",
+    "listenOn": "Entzun Bandcamp-en",
+    "viewMore": "Ikusi argazki gehiago",
+    "role": "Rola",
+    "year": "Urtea",
+    "location": "Lekua"
   }
 }

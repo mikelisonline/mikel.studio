@@ -8,17 +8,29 @@
     "photography": "Fotografía"
   },
   "projects": {
-    "project-one": {
-      "title": "Proyecto Uno",
-      "description": "Una aplicación web construida con tecnologías modernas y principios de diseño limpio."
+    "traube": {
+      "title": "Traube",
+      "description": "Plataforma social para descubrir y organizar eventos. Alternativa comunitaria y privada a las redes sociales — sin algoritmos, sin anuncios."
     },
-    "project-two": {
-      "title": "Proyecto Dos",
-      "description": "Una experiencia mobile-first centrada en la usabilidad y la narrativa visual."
+    "padelko": {
+      "title": "Padelko",
+      "description": "Sitio web e identidad de marca para un centro de pádel premium con pistas panorámicas indoor, academia y servicios fitness."
     },
-    "project-three": {
-      "title": "Proyecto Tres",
-      "description": "Una exploración creativa que fusiona código y diseño en algo nuevo."
+    "uncommon": {
+      "title": "Uncommon Club",
+      "description": "Plataforma de comunidad premium con beneficios exclusivos, networking y acceso privilegiado para sus miembros."
     }
+  },
+  "footer": {
+    "copyright": "Mikel Garcia",
+    "source": "Código fuente"
+  },
+  "drawer": {
+    "visitSite": "Visitar sitio",
+    "listenOn": "Escuchar en Bandcamp",
+    "viewMore": "Ver más fotos",
+    "role": "Rol",
+    "year": "Año",
+    "location": "Lugar"
   }
 }

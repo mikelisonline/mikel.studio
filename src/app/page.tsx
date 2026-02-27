@@ -5,6 +5,7 @@ import ProjectCard from "@/components/ProjectCard";
 import MusicCard from "@/components/MusicCard";
 import PhotoCard from "@/components/PhotoCard";
 import Divider from "@/components/Divider";
+import Footer from "@/components/Footer";
 import { projects } from "@/data/projects";
 import { albums } from "@/data/music";
 import { photos } from "@/data/photos";
@@ -15,9 +16,9 @@ export default function Home() {
       {/* Hero */}
       <Hero />
 
-      {/* Sections with Robin-style spacing */}
+      {/* Sections */}
       <div className="mt-32 space-y-16 md:space-y-32">
-        {/* Projects Carousel */}
+        {/* Projects */}
         <Carousel headlineKey="sections.projects">
           {projects.map((project) => (
             <CarouselItem
@@ -31,7 +32,7 @@ export default function Home() {
 
         <Divider />
 
-        {/* Music Carousel */}
+        {/* Music */}
         <Carousel headlineKey="sections.music">
           {albums.map((album) => (
             <CarouselItem
@@ -45,7 +46,7 @@ export default function Home() {
 
         <Divider />
 
-        {/* Photography Carousel */}
+        {/* Photography */}
         <Carousel headlineKey="sections.photography">
           {photos.map((photo) => (
             <CarouselItem
@@ -58,8 +59,10 @@ export default function Home() {
         </Carousel>
       </div>
 
-      {/* Footer spacer */}
-      <div className="mt-32 pb-20" />
+      {/* Footer */}
+      <div className="mt-32">
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -2,20 +2,20 @@
 
 import { useLanguage } from "@/context/LanguageContext";
 import type { Project } from "@/data/projects";
+import DrawerWrapper from "./DrawerWrapper";
 
 export default function ProjectCard({ project }: { project: Project }) {
   const { t } = useLanguage();
 
-  return (
-    <a
-      href={project.href}
-      className="group h-full relative aspect-[4/5] rounded-2xl p-3 flex flex-col overflow-hidden hover-lift"
+  const card = (
+    <button
+      className="group h-full w-full relative aspect-[4/5] rounded-2xl p-3 flex flex-col overflow-hidden hover-lift text-left cursor-pointer"
       style={{
         backgroundColor: project.bgColorDark,
       }}
     >
       {/* Top bar */}
-      <div className="flex justify-between items-start">
+      <div className="flex justify-between items-start w-full">
         <span className="rounded-full bg-white/10 px-3 py-1 text-xs text-white font-mono">
           {project.year}
         </span>
@@ -61,6 +61,49 @@ export default function ProjectCard({ project }: { project: Project }) {
           {t(project.descriptionKey)}
         </p>
       </div>
-    </a>
+    </button>
+  );
+
+  return (
+    <DrawerWrapper
+      trigger={card}
+      title={t(project.titleKey)}
+      description={t(project.descriptionKey)}
+    >
+      <div className="space-y-4">
+        <div className="grid grid-cols-2 gap-4 text-sm">
+          <div>
+            <p className="text-text-muted font-mono text-xs mb-1">{t("drawer.year")}</p>
+            <p className="text-text-primary">{project.year}</p>
+          </div>
+          <div>
+            <p className="text-text-muted font-mono text-xs mb-1">{t("drawer.role")}</p>
+            <div className="flex flex-wrap gap-1.5">
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="text-xs bg-surface-raised px-2 py-0.5 rounded-full text-text-secondary"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <a
+          href={project.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 font-mono text-sm text-text-primary underline decoration-border underline-offset-4 hover:decoration-text-primary transition-colors"
+        >
+          {t("drawer.visitSite")}
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7" />
+            <polyline points="7 7 17 7 17 17" />
+          </svg>
+        </a>
+      </div>
+    </DrawerWrapper>
   );
 }
