@@ -12,15 +12,16 @@ export default function Hero() {
       <Container>
         {/* SVG with striped text effect */}
         <div className="mb-8 md:mb-12">
+          {/* Desktop — single line */}
           <svg
             viewBox="0 0 920 200"
-            className="w-full text-foreground"
+            className="hidden sm:block w-full text-foreground"
             aria-label="Mikel Studio"
             role="img"
           >
             <defs>
               <pattern
-                id="hero-stripes"
+                id="hero-stripes-d"
                 width="100%"
                 height="5.5"
                 patternUnits="userSpaceOnUse"
@@ -28,14 +29,12 @@ export default function Hero() {
                 <rect width="100%" height="3" fill="currentColor" />
               </pattern>
             </defs>
-            {/* Single line on desktop */}
             <text
               x="50%"
               y="50%"
               dominantBaseline="central"
               textAnchor="middle"
-              fill="url(#hero-stripes)"
-              className="hidden sm:block"
+              fill="url(#hero-stripes-d)"
               style={{
                 fontFamily: 'Georgia, "Times New Roman", serif',
                 fontSize: "140px",
@@ -45,14 +44,30 @@ export default function Hero() {
             >
               Mikel Studio
             </text>
-            {/* Two lines on mobile */}
+          </svg>
+          {/* Mobile — two lines, tighter viewBox for much bigger text */}
+          <svg
+            viewBox="0 0 480 260"
+            className="sm:hidden w-full text-foreground"
+            aria-label="Mikel Studio"
+            role="img"
+          >
+            <defs>
+              <pattern
+                id="hero-stripes-m"
+                width="100%"
+                height="5.5"
+                patternUnits="userSpaceOnUse"
+              >
+                <rect width="100%" height="3" fill="currentColor" />
+              </pattern>
+            </defs>
             <text
               x="50%"
-              y="35%"
+              y="38%"
               dominantBaseline="central"
               textAnchor="middle"
-              fill="url(#hero-stripes)"
-              className="sm:hidden"
+              fill="url(#hero-stripes-m)"
               style={{
                 fontFamily: 'Georgia, "Times New Roman", serif',
                 fontSize: "120px",
@@ -67,8 +82,7 @@ export default function Hero() {
               y="72%"
               dominantBaseline="central"
               textAnchor="middle"
-              fill="url(#hero-stripes)"
-              className="sm:hidden"
+              fill="url(#hero-stripes-m)"
               style={{
                 fontFamily: 'Georgia, "Times New Roman", serif',
                 fontSize: "120px",

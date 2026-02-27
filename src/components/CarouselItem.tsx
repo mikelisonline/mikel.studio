@@ -13,10 +13,14 @@ export default function CarouselItem({
 }: CarouselItemProps) {
   return (
     <div
-      className={`snap-start pt-6 pb-16 ${className}`}
-      style={{
-        gridColumn: `span ${colSpan.large}`,
-      }}
+      className={`carousel-item snap-start pt-6 pb-16 ${className}`}
+      style={
+        {
+          "--col-span-large": colSpan.large,
+          "--col-span-medium": colSpan.medium,
+          "--col-span-small": colSpan.small,
+        } as React.CSSProperties
+      }
     >
       {children}
     </div>

@@ -17,9 +17,12 @@ export default function Home() {
       <Hero />
 
       {/* Sections */}
-      <div className="mt-32 space-y-16 md:space-y-32">
+      <div className="mt-16 md:mt-32 space-y-16 md:space-y-32">
         {/* Projects */}
-        <Carousel headlineKey="sections.projects">
+        <Carousel
+          headlineKey="sections.projects"
+          descriptionKey="sections.projectsDesc"
+        >
           {projects.map((project) => (
             <CarouselItem
               key={project.id}
@@ -33,7 +36,10 @@ export default function Home() {
         <Divider />
 
         {/* Music */}
-        <Carousel headlineKey="sections.music">
+        <Carousel
+          headlineKey="sections.music"
+          descriptionKey="sections.musicDesc"
+        >
           {albums.map((album) => (
             <CarouselItem
               key={album.id}
@@ -47,7 +53,12 @@ export default function Home() {
         <Divider />
 
         {/* Photography */}
-        <Carousel headlineKey="sections.photography">
+        <Carousel
+          headlineKey="sections.photography"
+          descriptionKey="sections.photographyDesc"
+          linkHref="https://everyday-eye.com"
+          linkLabelKey="drawer.viewAll"
+        >
           {photos.map((photo) => (
             <CarouselItem
               key={photo.id}
@@ -60,7 +71,7 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <div className="mt-32">
+      <div className="mt-16 md:mt-32">
         <Footer />
       </div>
     </div>

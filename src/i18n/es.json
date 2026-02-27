@@ -4,8 +4,11 @@
   },
   "sections": {
     "projects": "Proyectos",
+    "projectsDesc": "Trabajo seleccionado en diseño y desarrollo front-end.",
     "music": "Música",
-    "photography": "Fotografía"
+    "musicDesc": "Lanzamientos bajo el sello Current Liaison — voz, electrónica, mezcla y producción.",
+    "photography": "Fotografía",
+    "photographyDesc": "Un guiño a la rutina, la vida cotidiana, la ciudad y sus calles."
   },
   "projects": {
     "traube": {
@@ -29,6 +32,7 @@
     "visitSite": "Visitar sitio",
     "listenOn": "Escuchar en Bandcamp",
     "viewMore": "Ver más fotos",
+    "viewAll": "everyday-eye.com",
     "role": "Rol",
     "year": "Año",
     "location": "Lugar"

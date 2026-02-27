@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import type { Album } from "@/data/music";
 import DrawerWrapper from "./DrawerWrapper";
@@ -9,22 +10,30 @@ export default function MusicCard({ album }: { album: Album }) {
 
   const card = (
     <button className="group hover-lift text-left cursor-pointer w-full">
-      {/* Album art placeholder */}
-      <div className="aspect-square rounded-xl bg-surface overflow-hidden">
-        <div className="w-full h-full bg-surface-raised" />
+      {/* Album art */}
+      <div className="aspect-square rounded-xl bg-surface overflow-hidden relative">
+        <Image
+          src={album.cover}
+          alt={`${album.artist} — ${album.albumName}`}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 60vw, 25vw"
+        />
       </div>
 
-      {/* Info */}
+      {/* Info — album name big, artist small */}
       <div className="mt-3">
         <p className="text-sm font-bold text-text-primary truncate">
-          {album.artist}
+          {album.albumName}
         </p>
         <p className="text-sm text-text-secondary truncate">
-          {album.albumName}
+          {album.artist}
         </p>
       </div>
     </button>
   );
+
+  const embedUrl = `https://bandcamp.com/EmbeddedPlayer/${album.embedType}=${album.embedId}/size=large/bgcol=333333/linkcol=e99708/minimal=true/transparent=true/`;
 
   return (
     <DrawerWrapper
@@ -32,7 +41,18 @@ export default function MusicCard({ album }: { album: Album }) {
       title={album.albumName}
       description={album.artist}
     >
-      <div className="space-y-4">
+      <div className="space-y-5">
+        {/* Bandcamp embed player */}
+        <div className="rounded-xl overflow-hidden">
+          <iframe
+            src={embedUrl}
+            seamless
+            className="w-full border-0"
+            style={{ height: "120px" }}
+            title={`${album.albumName} by ${album.artist}`}
+          />
+        </div>
+
         <div className="grid grid-cols-2 gap-4 text-sm">
           <div>
             <p className="text-text-muted font-mono text-xs mb-1">{t("drawer.year")}</p>

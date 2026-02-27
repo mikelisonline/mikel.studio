@@ -8,6 +8,8 @@ interface CarouselProps {
   children: ReactNode;
   headlineKey: string;
   descriptionKey?: string;
+  linkHref?: string;
+  linkLabelKey?: string;
   /** Number of grid columns each item spans at large/medium/small */
   colSpan?: { large: number; medium: number; small: number };
 }
@@ -16,6 +18,8 @@ export default function Carousel({
   children,
   headlineKey,
   descriptionKey,
+  linkHref,
+  linkLabelKey,
   colSpan = { large: 4, medium: 8, small: 10 },
 }: CarouselProps) {
   return (
@@ -24,6 +28,8 @@ export default function Carousel({
         <SectionHeader
           labelKey={headlineKey}
           descriptionKey={descriptionKey}
+          linkHref={linkHref}
+          linkLabelKey={linkLabelKey}
         />
       </Container>
       <div

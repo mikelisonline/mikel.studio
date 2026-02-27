@@ -2,7 +2,7 @@ export interface Project {
   id: string;
   titleKey: string;
   descriptionKey: string;
-  tags: ("design" | "front-end" | "design & front-end")[];
+  tags: ("design" | "front-end" | "design & front-end" | "founder")[];
   year: number;
   href: string;
   bgColorDark: string;
@@ -13,7 +13,7 @@ export const projects: Project[] = [
     id: "traube",
     titleKey: "projects.traube.title",
     descriptionKey: "projects.traube.description",
-    tags: ["design & front-end"],
+    tags: ["founder", "design & front-end"],
     year: 2024,
     href: "https://traube.club",
     bgColorDark: "oklch(0.32 0.06 295)",

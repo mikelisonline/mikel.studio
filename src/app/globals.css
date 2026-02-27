@@ -130,7 +130,15 @@ body {
   scroll-padding-inline-start: max(0px, calc((100vw - var(--max-width)) / 2));
 }
 
+/* Responsive carousel item column spans */
+.carousel-item {
+  grid-column: span var(--col-span-large, 4);
+}
+
 @media (max-width: 1088px) and (min-width: 769px) {
+  .carousel-item {
+    grid-column: span var(--col-span-medium, 8);
+  }
   .carousel-grid {
     padding-inline: 32px;
     grid-auto-columns: calc(
@@ -147,5 +155,8 @@ body {
       (100vw - 32px - (var(--columns) - 1) * var(--gap)) / var(--columns)
     );
     scroll-padding-inline-start: 16px;
+  }
+  .carousel-item {
+    grid-column: span var(--col-span-small, 10);
   }
 }

@@ -4,8 +4,11 @@
   },
   "sections": {
     "projects": "Projects",
+    "projectsDesc": "Selected work in design and front-end development.",
     "music": "Music",
-    "photography": "Photography"
+    "musicDesc": "Releases under the Current Liaison label — vocals, electronics, mix and production.",
+    "photography": "Photography",
+    "photographyDesc": "A nod to routine, everyday life, the city and its streets."
   },
   "projects": {
     "traube": {
@@ -29,6 +32,7 @@
     "visitSite": "Visit site",
     "listenOn": "Listen on Bandcamp",
     "viewMore": "View more photos",
+    "viewAll": "everyday-eye.com",
     "role": "Role",
     "year": "Year",
     "location": "Location"

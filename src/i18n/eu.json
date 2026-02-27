@@ -4,8 +4,11 @@
   },
   "sections": {
     "projects": "Proiektuak",
+    "projectsDesc": "Hautatutako lanak diseinuan eta front-end garapenean.",
     "music": "Musika",
-    "photography": "Argazkilaritza"
+    "musicDesc": "Current Liaison zigilupean argitaratutakoak — ahotsa, elektronika, nahasketa eta ekoizpena.",
+    "photography": "Argazkilaritza",
+    "photographyDesc": "Errutinari, eguneroko bizitzari, hiriari eta bere kaleei begirada bat."
   },
   "projects": {
     "traube": {
@@ -29,6 +32,7 @@
     "visitSite": "Bisitatu webgunea",
     "listenOn": "Entzun Bandcamp-en",
     "viewMore": "Ikusi argazki gehiago",
+    "viewAll": "everyday-eye.com",
     "role": "Rola",
     "year": "Urtea",
     "location": "Lekua"
