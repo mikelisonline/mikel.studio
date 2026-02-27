@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import type { Project } from "@/data/projects";
 import DrawerWrapper from "./DrawerWrapper";
@@ -15,10 +14,10 @@ export default function ProjectCard({ project }: { project: Project }) {
         backgroundColor: project.bgColorDark,
       }}
     >
-      {/* Top bar */}
+      {/* Top bar — type label + arrow */}
       <div className="flex justify-between items-start w-full">
-        <span className="rounded-full bg-white/10 px-3 py-1 text-xs text-white font-mono">
-          {project.year}
+        <span className="rounded-full bg-white/10 px-3 py-1 text-xs text-white/70 font-mono">
+          {project.typeLabel}
         </span>
         <span className="rounded-full bg-white/10 p-1.5 text-white">
           <svg
@@ -37,15 +36,14 @@ export default function ProjectCard({ project }: { project: Project }) {
         </span>
       </div>
 
-      {/* Center logo area */}
+      {/* Center — iOS app icon style logo */}
       <div className="flex-1 flex items-center justify-center">
-        <div className="w-[36%] aspect-square relative opacity-60">
-          <Image
-            src={project.logo}
+        <div className="w-[55%] aspect-square rounded-[22%] bg-white/[0.12] flex items-center justify-center p-[16%]">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${project.logo}?v=2`}
             alt={`${t(project.titleKey)} logo`}
-            fill
-            className="object-contain"
-            sizes="120px"
+            className="w-full h-full object-contain"
           />
         </div>
       </div>
