@@ -1,6 +1,7 @@
 {
   "hero": {
-    "tagline": "Online: designer, developer. Offline: musician, (barely) photographer."
+    "tagline1": "Online: designer, developer.",
+    "tagline2": "Offline: musician, (barely) photographer."
   },
   "sections": {
     "projects": "Projects",

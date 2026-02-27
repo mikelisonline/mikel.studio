@@ -114,7 +114,10 @@ export default function Hero() {
         <div className="grid grid-cols-12 gap-4">
           <div className="col-span-12 md:col-span-8">
             <p className="text-base font-mono text-text-secondary leading-relaxed">
-              {t("hero.tagline")}
+              {t("hero.tagline1")}
+            </p>
+            <p className="text-base font-mono text-text-secondary leading-relaxed">
+              {t("hero.tagline2")}
             </p>
           </div>
           <div className="col-span-12 md:col-span-4 md:flex md:justify-end md:items-end">

@@ -1,6 +1,7 @@
 {
   "hero": {
-    "tagline": "Online: diseinatzailea, garatzailea. Offline: musikaria, argazkilaria (ozta-ozta)."
+    "tagline1": "Online: diseinatzailea, garatzailea.",
+    "tagline2": "Offline: musikaria, argazkilaria (ozta-ozta)."
   },
   "sections": {
     "projects": "Proiektuak",

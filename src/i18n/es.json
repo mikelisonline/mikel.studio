@@ -1,6 +1,7 @@
 {
   "hero": {
-    "tagline": "Online: diseñador, desarrollador. Offline: músico, fotógrafo (apenas)."
+    "tagline1": "Online: diseñador, desarrollador.",
+    "tagline2": "Offline: músico, fotógrafo (apenas)."
   },
   "sections": {
     "projects": "Proyectos",
