@@ -39,13 +39,13 @@ export default function ProjectCard({ project }: { project: Project }) {
 
       {/* Center logo area */}
       <div className="flex-1 flex items-center justify-center">
-        <div className="w-[50%] aspect-square relative">
+        <div className="w-[36%] aspect-square relative opacity-60">
           <Image
             src={project.logo}
             alt={`${t(project.titleKey)} logo`}
             fill
-            className="object-contain drop-shadow-lg"
-            sizes="150px"
+            className="object-contain"
+            sizes="120px"
           />
         </div>
       </div>
