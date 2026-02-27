@@ -33,7 +33,8 @@ export default function MusicCard({ album }: { album: Album }) {
     </button>
   );
 
-  const embedUrl = `https://bandcamp.com/EmbeddedPlayer/${album.embedType}=${album.embedId}/size=large/bgcol=333333/linkcol=e99708/minimal=true/transparent=true/`;
+  // size=large + artwork=large gives us the square album art player
+  const embedUrl = `https://bandcamp.com/EmbeddedPlayer/${album.embedType}=${album.embedId}/size=large/bgcol=333333/linkcol=e99708/artwork=large/transparent=true/`;
 
   return (
     <DrawerWrapper
@@ -42,13 +43,13 @@ export default function MusicCard({ album }: { album: Album }) {
       description={album.artist}
     >
       <div className="space-y-5">
-        {/* Bandcamp embed player */}
-        <div className="rounded-xl overflow-hidden">
+        {/* Bandcamp embed player — square with album art */}
+        <div className="rounded-xl overflow-hidden aspect-square max-w-sm mx-auto w-full">
           <iframe
             src={embedUrl}
             seamless
-            className="w-full border-0"
-            style={{ height: "120px" }}
+            loading="lazy"
+            className="w-full h-full border-0"
             title={`${album.albumName} by ${album.artist}`}
           />
         </div>

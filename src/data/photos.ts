@@ -1,60 +1,103 @@
-export interface Photo {
+export interface PhotoSeries {
   id: string;
   title: string;
   location: string;
   year: number;
-  src: string;
+  cover: string;
   alt: string;
+  images: string[];
 }
 
-export const photos: Photo[] = [
+export const photoSeries: PhotoSeries[] = [
   {
-    id: "sisters-porto",
-    title: "Sisters in Porto",
+    id: "porto",
+    title: "Porto over the years",
     location: "Porto",
     year: 2022,
-    src: "https://everyday-eye.com/wp-content/uploads/2022/12/tumblr_80aef00bc2100ab6a92f57dc791f11d7_60be00d5_1280.jpg",
-    alt: "Sisters in Porto",
+    cover: "/photos/porto/01.jpg",
+    alt: "Sisters walking in Porto",
+    images: [
+      "/photos/porto/01.jpg",
+      "/photos/porto/02.jpg",
+      "/photos/porto/03.jpg",
+      "/photos/porto/04.jpg",
+      "/photos/porto/05.jpg",
+      "/photos/porto/06.jpg",
+    ],
   },
   {
-    id: "street-seller-porto",
-    title: "Street seller",
-    location: "Porto",
-    year: 2022,
-    src: "https://everyday-eye.com/wp-content/uploads/2022/11/IMG_3966.jpg",
-    alt: "Street seller in Porto",
-  },
-  {
-    id: "woman-positano",
-    title: "Woman on the phone",
-    location: "Positano",
-    year: 2022,
-    src: "https://everyday-eye.com/wp-content/uploads/2021/09/IMG_3170.jpg",
-    alt: "Woman on the phone in Positano",
-  },
-  {
-    id: "mario-positano",
-    title: "Mario of Positano",
+    id: "positano",
+    title: "An afternoon in Positano",
     location: "Positano",
     year: 2021,
-    src: "https://everyday-eye.com/wp-content/uploads/2021/09/IMG_3200.jpg",
-    alt: "Mario of Positano",
+    cover: "/photos/positano/02.jpg",
+    alt: "Woman on the phone in Positano",
+    images: [
+      "/photos/positano/01.jpg",
+      "/photos/positano/02.jpg",
+      "/photos/positano/03.jpg",
+      "/photos/positano/04.jpg",
+      "/photos/positano/05.jpg",
+    ],
   },
   {
-    id: "napoli-bw",
-    title: "View of Napoli",
+    id: "napoli",
+    title: "Napoli in b&w",
     location: "Napoli",
     year: 2021,
-    src: "https://everyday-eye.com/wp-content/uploads/2021/09/tumblr_50ab8cf5d0e912c29fa5ca3f5c06c616_4f1081f9_2048.jpg",
-    alt: "Black and white view of Napoli",
+    cover: "/photos/napoli/04.jpg",
+    alt: "View of Napoli in black and white",
+    images: [
+      "/photos/napoli/01.jpg",
+      "/photos/napoli/02.jpg",
+      "/photos/napoli/03.jpg",
+      "/photos/napoli/04.jpg",
+      "/photos/napoli/05.jpg",
+      "/photos/napoli/06.jpg",
+    ],
   },
   {
-    id: "berlin-ruins",
-    title: "Ruins",
+    id: "iparralde",
+    title: "A day in Iparralde",
+    location: "Iparralde",
+    year: 2022,
+    cover: "/photos/iparralde/01.jpg",
+    alt: "Scene from Iparralde",
+    images: [
+      "/photos/iparralde/01.jpg",
+      "/photos/iparralde/02.jpg",
+      "/photos/iparralde/03.jpg",
+      "/photos/iparralde/04.jpg",
+      "/photos/iparralde/05.jpg",
+    ],
+  },
+  {
+    id: "mallorca",
+    title: "A day in Mallorca",
+    location: "Mallorca",
+    year: 2022,
+    cover: "/photos/mallorca/01.jpg",
+    alt: "Mallorca countryside",
+    images: [
+      "/photos/mallorca/01.jpg",
+      "/photos/mallorca/02.jpg",
+      "/photos/mallorca/03.jpg",
+      "/photos/mallorca/04.jpg",
+      "/photos/mallorca/05.jpg",
+    ],
+  },
+  {
+    id: "berlin",
+    title: "A night in Berlin",
     location: "Berlin",
-    year: 2021,
-    src: "https://everyday-eye.com/wp-content/uploads/2020/11/fef313071c200c439e6cf08e2db1337fa3127d54.jpg",
-    alt: "Ruins in Berlin",
+    year: 2018,
+    cover: "/photos/berlin/01.jpg",
+    alt: "Night scene in Berlin",
+    images: [
+      "/photos/berlin/01.jpg",
+      "/photos/berlin/02.jpg",
+      "/photos/berlin/03.jpg",
+    ],
   },
 ];
 

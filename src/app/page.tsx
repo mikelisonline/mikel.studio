@@ -8,7 +8,7 @@ import Divider from "@/components/Divider";
 import Footer from "@/components/Footer";
 import { projects } from "@/data/projects";
 import { albums } from "@/data/music";
-import { photos } from "@/data/photos";
+import { photoSeries } from "@/data/photos";
 
 export default function Home() {
   return (
@@ -59,12 +59,12 @@ export default function Home() {
           linkHref="https://everyday-eye.com"
           linkLabelKey="drawer.viewAll"
         >
-          {photos.map((photo) => (
+          {photoSeries.map((series) => (
             <CarouselItem
-              key={photo.id}
+              key={series.id}
               colSpan={{ large: 4, medium: 5, small: 10 }}
             >
-              <PhotoCard photo={photo} />
+              <PhotoCard series={series} />
             </CarouselItem>
           ))}
         </Carousel>

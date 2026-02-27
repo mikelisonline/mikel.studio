@@ -4,13 +4,57 @@ import { useLanguage } from "@/context/LanguageContext";
 import LanguageSelector from "./LanguageSelector";
 import Container from "./Container";
 
+// Generate stripe rects with staggered animation delays
+// Each stripe is a horizontal line that fades in/out at different times
+function AnimatedStripes({ id, height }: { id: string; height: number }) {
+  const stripeHeight = 3;
+  const gap = 2.5;
+  const step = stripeHeight + gap;
+  const count = Math.ceil(height / step);
+
+  return (
+    <pattern
+      id={id}
+      width="100%"
+      height={height}
+      patternUnits="userSpaceOnUse"
+    >
+      {Array.from({ length: count }, (_, i) => {
+        // Pseudo-random delay based on index — creates organic feel
+        const delay = ((i * 7 + 3) % count) * 0.15;
+        const duration = 3 + (i % 5) * 0.5;
+        return (
+          <rect
+            key={i}
+            y={i * step}
+            width="100%"
+            height={stripeHeight}
+            fill="currentColor"
+            className="hero-stripe"
+            style={{
+              animationDelay: `${delay}s`,
+              animationDuration: `${duration}s`,
+            }}
+          />
+        );
+      })}
+    </pattern>
+  );
+}
+
+const textStyle = {
+  fontFamily: 'Georgia, "Times New Roman", serif',
+  fontWeight: 700,
+  letterSpacing: "-0.02em",
+};
+
 export default function Hero() {
   const { t } = useLanguage();
 
   return (
     <section className="pt-24 md:pt-40 pb-8 md:pb-16 bg-surface">
       <Container>
-        {/* SVG with striped text effect */}
+        {/* SVG with animated striped text effect */}
         <div className="mb-8 md:mb-12">
           {/* Desktop — single line */}
           <svg
@@ -20,14 +64,7 @@ export default function Hero() {
             role="img"
           >
             <defs>
-              <pattern
-                id="hero-stripes-d"
-                width="100%"
-                height="5.5"
-                patternUnits="userSpaceOnUse"
-              >
-                <rect width="100%" height="3" fill="currentColor" />
-              </pattern>
+              <AnimatedStripes id="hero-stripes-d" height={200} />
             </defs>
             <text
               x="50%"
@@ -35,17 +72,12 @@ export default function Hero() {
               dominantBaseline="central"
               textAnchor="middle"
               fill="url(#hero-stripes-d)"
-              style={{
-                fontFamily: 'Georgia, "Times New Roman", serif',
-                fontSize: "140px",
-                fontWeight: 700,
-                letterSpacing: "-0.02em",
-              }}
+              style={{ ...textStyle, fontSize: "140px" }}
             >
               Mikel Studio
             </text>
           </svg>
-          {/* Mobile — two lines, tighter viewBox for much bigger text */}
+          {/* Mobile — two lines */}
           <svg
             viewBox="0 0 480 260"
             className="sm:hidden w-full text-foreground"
@@ -53,14 +85,7 @@ export default function Hero() {
             role="img"
           >
             <defs>
-              <pattern
-                id="hero-stripes-m"
-                width="100%"
-                height="5.5"
-                patternUnits="userSpaceOnUse"
-              >
-                <rect width="100%" height="3" fill="currentColor" />
-              </pattern>
+              <AnimatedStripes id="hero-stripes-m" height={260} />
             </defs>
             <text
               x="50%"
@@ -68,12 +93,7 @@ export default function Hero() {
               dominantBaseline="central"
               textAnchor="middle"
               fill="url(#hero-stripes-m)"
-              style={{
-                fontFamily: 'Georgia, "Times New Roman", serif',
-                fontSize: "120px",
-                fontWeight: 700,
-                letterSpacing: "-0.02em",
-              }}
+              style={{ ...textStyle, fontSize: "120px" }}
             >
               Mikel
             </text>
@@ -83,12 +103,7 @@ export default function Hero() {
               dominantBaseline="central"
               textAnchor="middle"
               fill="url(#hero-stripes-m)"
-              style={{
-                fontFamily: 'Georgia, "Times New Roman", serif',
-                fontSize: "120px",
-                fontWeight: 700,
-                letterSpacing: "-0.02em",
-              }}
+              style={{ ...textStyle, fontSize: "120px" }}
             >
               Studio
             </text>
