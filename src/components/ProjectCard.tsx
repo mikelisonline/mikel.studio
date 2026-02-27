@@ -9,7 +9,7 @@ export default function ProjectCard({ project }: { project: Project }) {
 
   const card = (
     <button
-      className="group h-full w-full relative aspect-[4/5] rounded-2xl p-3 flex flex-col overflow-hidden hover-lift text-left cursor-pointer"
+      className="group w-full relative aspect-[4/5] rounded-2xl p-3 flex flex-col overflow-hidden hover-lift text-left cursor-pointer"
       style={{
         backgroundColor: project.bgColorDark,
       }}
