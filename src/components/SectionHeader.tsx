@@ -18,10 +18,10 @@ export default function SectionHeader({
   const { t } = useLanguage();
 
   return (
-    <div className="flex flex-wrap items-baseline justify-between gap-y-2 mb-6 sm:mb-8 lg:mb-16">
+    <div className="flex flex-col lg:flex-row lg:items-baseline lg:justify-between gap-2 mb-6 sm:mb-8 lg:mb-16">
       <h2 className="text-xl font-bold">{t(labelKey)}</h2>
       {(descriptionKey || linkHref) && (
-        <div className="flex items-baseline gap-4">
+        <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
           {descriptionKey && (
             <p className="font-mono text-text-secondary text-sm">
               {t(descriptionKey)}
