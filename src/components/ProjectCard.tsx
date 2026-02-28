@@ -38,7 +38,7 @@ export default function ProjectCard({ project }: { project: Project }) {
 
       {/* Center — iOS app icon style logo */}
       <div className="flex-1 flex items-center justify-center">
-        <div className="w-[55%] aspect-square rounded-[22%] bg-white/[0.12] flex items-center justify-center p-[16%]">
+        <div className="w-[55%] aspect-square flex items-center justify-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={`${project.logo}?v=2`}
